@@ -9,7 +9,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.get('/health', (req: Request, res: Response) => {
-  res.json({ status: 'healthy', timestamp: new Date().toISOString() });
+  res.json({ status: 'healthy', version: '1.0.0', timestamp: new Date().toISOString() });
 });
 
 export default app;
