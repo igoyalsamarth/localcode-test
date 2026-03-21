@@ -27,9 +27,9 @@ describe('Health Check Route', () => {
       expect(response.headers['content-type']).toMatch(/json/);
     });
 
-    it('should return version v1.0.0', async () => {
+    it('should return version object with value 1.0.0', async () => {
       const response = await request(app).get('/health');
-      expect(response.body.version).toBe('v1.0.0');
+      expect(response.body.version).toEqual({ value: '1.0.0' });
     });
   });
 });
