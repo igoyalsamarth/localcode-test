@@ -26,5 +26,10 @@ describe('Health Check Route', () => {
       const response = await request(app).get('/health');
       expect(response.headers['content-type']).toMatch(/json/);
     });
+
+    it('should return version v1.0.0', async () => {
+      const response = await request(app).get('/health');
+      expect(response.body.version).toBe('v1.0.0');
+    });
   });
 });
