@@ -1,5 +1,4 @@
 import express, { Request, Response } from 'express';
-import { version } from '../package.json';
 
 const app = express();
 
@@ -10,7 +9,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.get('/health', (req: Request, res: Response) => {
-  res.json({ status: 'healthy', timestamp: new Date().toISOString(), version });
+  res.json({ status: 'healthy', timestamp: new Date().toISOString(), version: process.env.npm_package_version });
 });
 
 export default app;
