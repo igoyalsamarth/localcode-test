@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req: Request, res: Response) => {
-  res.json({ message: 'Hello from TypeScript Node.js server!' });
+  res.json({ message: 'Hello from TypeScript Node.js server!', version: 'v1.0.0' });
 });
 
 app.get('/health', (req: Request, res: Response) => {
